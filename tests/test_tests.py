@@ -1,5 +1,5 @@
 import unittest
-from uuid import uuid4, UUID
+from uuid import uuid4
 from pydantic import ValidationError
 from models import (TestCreateSchema,
                     QuestionCreateSchema,
@@ -8,8 +8,7 @@ from models import (TestCreateSchema,
                     AnswerSchema,
                     TestSchema,
                     Level,
-                    QuestionType
-                    )
+                    QuestionType)
 
 
 class TestModels(unittest.TestCase):
@@ -208,6 +207,7 @@ class TestModels(unittest.TestCase):
             self.assertEqual((context.exception.errors()[0]['loc'][0]), missing_field)
             self.assertEqual((context.exception.errors()[0]['type']), 'missing')
 
+    # todo - check other test case
     def test_question_create_schema_valid(self):
         """Test for valid QuestionCreateSchema"""
         data = {
