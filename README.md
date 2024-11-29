@@ -22,7 +22,7 @@ pip install .
 Or install it directly from your repository if hosted on GitHub:
 
 ```bash
-pip install git+https://github.com/yourusername/models_library.git
+pip install git+https://github.com/nataliagwardjan/interview_prep_models_library.git
 ```
 
 ### Dependencies
@@ -66,12 +66,12 @@ This library includes a `Dockerfile` to simplify deployment. Build and run the D
 
 #### Build the Image
 ```bash
-docker build -t models-library .
+docker build -t interview_prep_models-library .
 ```
 
 #### Run the Container
 ```bash
-docker run -v $(pwd):/app -it models-library
+docker run -v $(pwd):/app -it interview_prep_models-library
 ```
 
 ## Development
@@ -98,10 +98,10 @@ docker run -v $(pwd):/app -it models-library
    ```
 
 ### Running Tests
-To ensure your changes work as expected, write and run unit tests using `pytest`:
+To ensure your changes work as expected, write and run unit tests.
 
 ```bash
-pytest tests/
+python -m unittest discover -s tests -p "*.py"
 ```
 
 ## Contributing
@@ -116,6 +116,9 @@ interview_prep_models_library/
 │   ├── __init__.py
 │   ├── users.py
 │   └── tests.py
+├── tests/
+│   ├── user_tests.py
+│   └── test_tests.py
 ├── __init__.py
 ├── README.md
 ├── requirements.txt
